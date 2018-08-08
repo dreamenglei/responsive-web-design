@@ -38,5 +38,45 @@ css hack是一种技术手段，**目的是解决不同浏览器对css解析不�
 <![endif]-->
 ```
 
+------------
+判断某属性是否被浏览器们支持，可用到这个网站。[Can I use](https://caniuse.com/#home "Can I use")
+下面这个算啥，不知道呃，应该是属性前缀。
+这是CSS3里的animation动画，做了兼容性设置。
+```css
+@keyframes myfirst
+{
+from {background: red;}
+to {background: yellow;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+from {background: red;}
+to {background: yellow;}
+}
+
+@-webkit-keyframes myfirst /* Safari 和 Chrome */
+{
+from {background: red;}
+to {background: yellow;}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+from {background: red;}
+to {background: yellow;}
+}
+```
+下面这个是CSS3里的transition属性。
+```css
+div
+{
+width:100px;
+transition: width 2s;
+-moz-transition: width 2s; /* Firefox 4 */
+-webkit-transition: width 2s; /* Safari 和 Chrome */
+-o-transition: width 2s; /* Opera */
+}
+```
 
 
